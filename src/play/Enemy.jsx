@@ -1,37 +1,21 @@
 import React from 'react';
+import { getStageConfig } from './GameStageLogic';
+import enemyImage from '../assets/EnemyNormal.png';
 
-function Enemy() {
+function Enemy({ stage = 1 }) { // Remove onTarget and isTargetable props
+  const config = getStageConfig(stage);
+
   return (
-    <div className="animate-breathe">
-      <svg width="200" height="300" viewBox="0 0 200 300" fill="none">
-        {/* Head */}
-        <ellipse 
-          cx="100" 
-          cy="80" 
-          rx="40" 
-          ry="45" 
-          className="fill-gray-800"
-        />
-        
-        {/* Body */}
-        <path
-          d="M60,120 
-             C60,180 60,240 100,270
-             C140,240 140,180 140,120
-             C140,110 120,100 100,100
-             C80,100 60,110 60,120"
-          className="fill-gray-900"
-        />
-
-        {/* Shadow */}
-        <ellipse
-          cx="100"
-          cy="280"
-          rx="50"
-          ry="10"
-          className="fill-black opacity-30 blur-sm"
-        />
-      </svg>
+    <div className="animate-breathe relative pointer-events-none"> {/* Add pointer-events-none */}
+      <img 
+        src={enemyImage}
+        alt="Enemy character" 
+        width="400" 
+        height="600"
+      />
+      <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-yellow-400 text-xl font-bold whitespace-nowrap">
+        {config.stageTitle}
+      </div>
     </div>
   );
 }

@@ -32,9 +32,9 @@ function Home({ onNavigate }) {
             </button>
             <button
               className="w-48 py-3 rounded-xl bg-gradient-to-r from-gray-700 to-gray-900 text-white text-xl font-bold shadow-lg hover:scale-105 transition-all duration-200 border-2 border-gray-800 hover:border-yellow-400"
-              onClick={() => onNavigate('settings')}
+              onClick={() => onNavigate('leaderboard')}
             >
-              Settings
+              Leaderboard
             </button>
             <button className="w-48 py-3 rounded-xl bg-gradient-to-r from-black to-gray-800 text-red-400 text-xl font-bold shadow-lg hover:scale-105 transition-all duration-200 border-2 border-gray-900 hover:border-yellow-400">
               Quit
